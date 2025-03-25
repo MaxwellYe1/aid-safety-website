@@ -1,0 +1,22 @@
+project:
+  type: website
+
+website:
+  title: "Aid Worker Safety Analysis"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Storytelling with Data"
+        href: visualizations.qmd
+      - text: "Conclusion"
+        href: conclusion.qmd
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    code-summary: "Show code" 
+    embed-resources: true 
+    toc: true
+    theme: cosmo

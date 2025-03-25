@@ -1,0 +1,32 @@
+---
+title: "Aid Worker Safety Analysis"
+author: ly307
+format: html
+---
+
+# Welcome 👋👋👋
+
+Humanitarian aid workers operate in some of the world’s most dangerous environments—regions marked by conflict, instability, and humanitarian crisis.  
+
+![An aid worker comforts and hydrates a child affected by conflict. ](img/aid.jpg)
+
+<small>Source: [The Borgen Project](https://borgenproject.org/9-facts-about-humanitarian-aid/)</small>
+
+This project offers a data-driven exploration of **attacks on aid workers** between **1997 and 2025**, aiming to uncover where, when, and how these threats occur.
+
+By geographic and temporal visualizations, we focus on:
+
+- Identifying the most dangerous countries for aid personnel  
+- Understanding how risks vary by location, attack method, and time  
+- Providing **evidence-based recommendations** for agencies and field teams  
+
+Our goal is not only to inform — but to support safer humanitarian operations by transforming data into actionable insights.
+
+---
+
+👉 Navigate to **Visualizations** to interact with the data.  
+👉 Or jump directly to the **Conclusion** to view our key findings and policy suggestions.
+
+---
+
+_Created by: ly307 (Georgetown University, DSAN)_
