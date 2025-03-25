@@ -77,34 +77,86 @@ fig.update_layout(xaxis_tickangle=-45, height=500)
 fig.show()
 ```
 
+
 From the bar chart, we can see that countries like **Afghanistan, South Sudan, and Syria** have consistently been high-risk zones for humanitarian operations. These countries have experienced a large number of attacks, kidnappings, and killings targeting aid personnel, underscoring the highly unstable security environment in these regions.
 
 
 
-## 🗺️ Global Incident Heat Map
+## 🗺️ Global Security Incident Map
 
-To provide a clearer picture of the **geographical distribution of incidents**, we created a global heat map that displays the location of each recorded event.
+To visualize the geographical spread of individual incidents, we developed a **global incident map** where each recorded event is represented as a single point.
 
 ```{python}
-# Remove data without longitude and latitude
+import plotly.graph_objs as go
+
+# Remove rows with missing coordinates
 df_geo = df[['Country', 'Latitude', 'Longitude']].dropna()
 
-# Geographic scatter plot
+# Calculate incident count per country for color encoding (optional)
+country_counts = df_geo['Country'].value_counts().reset_index()
+country_counts.columns = ['Country', 'Incident_Count']
+df_geo = df_geo.merge(country_counts, on='Country')
+
+# Create animated map (without size encoding)
 fig = px.scatter_geo(df_geo, 
-                     lat='Latitude', lon='Longitude',
+                     lat='Latitude', 
+                     lon='Longitude',
                      hover_name='Country',
-                     title='Incident Locations Worldwide (1997–2025)',
-                     opacity=0.6)
+                     color='Incident_Count',  # Optional: use color to indicate density
+                     color_continuous_scale='Viridis',
+                     title='Global Security Incidents Animation (1997–2025)',
+                     animation_frame='Country',
+                     projection='natural earth')
 
-# Set layout
-fig.update_traces(marker=dict(color='red', size=4))
-fig.update_layout(geo=dict(projection_type='natural earth'), height=600)
+# Set uniform marker size and reduce opacity to prevent overlap
+fig.update_traces(marker=dict(
+    size=6,
+    opacity=0.5,
+    line=dict(width=0.5, color='rgba(255,255,255,0.8)')
+))
+
+# Update map layout
+fig.update_layout(
+    height=700,
+    geo=dict(
+        showland=True,
+        landcolor='rgb(217, 217, 217)',
+        subunitcolor='rgb(255, 255, 255)',
+        countrycolor='rgb(255, 255, 255)',
+        showlakes=True,
+        lakecolor='rgb(255, 255, 255)',
+        showsubunits=True,
+        showcountries=True,
+        bgcolor='rgba(0,0,0,0.1)'
+    ),
+    paper_bgcolor='rgba(0,0,0,0)',
+    plot_bgcolor='rgba(0,0,0,0)'
+)
+
+# Add play/pause buttons
+fig.update_layout(
+    updatemenus=[{
+        'buttons': [
+            {'label': 'Play', 'method': 'animate', 'args': [None]},
+            {'label': 'Pause', 'method': 'animate', 'args': [[None], {'frame': {'duration': 0, 'redraw': False}, 'mode': 'immediate', 'transition': {'duration': 0}}]}
+        ],
+        'direction': 'left',
+        'pad': {'r': 10, 't': 87},
+        'showactive': False,
+        'type': 'buttons',
+        'x': 0.1,
+        'xanchor': 'right',
+        'y': 0,
+        'yanchor': 'top'
+    }]
+)
+
 fig.show()
-
 ```
 
 
-The red clusters on the map are densely concentrated in specific regions, especially across the **Middle East, Sub-Saharan Africa, and parts of Asia**. This spatial analysis helps aid organizations better understand the regional patterns of insecurity, allowing them to optimize routes, select safer project locations, and plan staff deployment more effectively.
+Unlike traditional heat maps or aggregated bubbles, this approach ensures that every event is equally represented.
+Such granular visualization enables aid organizations to better identify risk-prone areas, optimize travel routes, and make informed decisions about site selection and staff deployment.
 
 
 
@@ -171,8 +223,6 @@ This section dives into temporal and categorical patterns of risk—examining wh
 ## 📈 Shifting Hotspots: Year-by-Year Leaders in Aid Worker Incidents
 
 ```{python}
-import plotly.graph_objects as go
-
 df = df.dropna(subset=['Year', 'Country'])
 df['Year'] = df['Year'].astype(int)
 years = sorted(df['Year'].unique())
