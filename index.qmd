@@ -90,7 +90,7 @@ This animation highlights the top 5 most dangerous countries each year.
 
 ---
 
-## 🎯 Focus: Top 3 Dangerous Countries
+## 🎯 2023–2025 Top 3 Dangerous Countries
 
 ::: {.fragment}
 - 🟥 South Sudan  
