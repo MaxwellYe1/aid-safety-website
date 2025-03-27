@@ -5,18 +5,15 @@ website:
   title: "Aid Worker Safety Analysis"
   navbar:
     left:
-      - text: "Home"
-        href: index.qmd
-      - text: "Storytelling with Data"
-        href: visualizations.qmd
-      - text: "Conclusion"
-        href: conclusion.qmd
+      - href: index.qmd
+        text: "Slides"
 
 format:
   html:
-    code-fold: true
-    code-tools: true
-    code-summary: "Show code" 
-    embed-resources: true 
-    toc: true
     theme: cosmo
+  revealjs:
+    theme: simple
+    transition: convex
+    slide-number: true
+    center: true
+    css: custom.css

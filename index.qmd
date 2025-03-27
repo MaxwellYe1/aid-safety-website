@@ -1,32 +1,251 @@
 ---
 title: "Aid Worker Safety Analysis"
-author: ly307
-format: html
+author: "ly307"
+format: 
+  revealjs:
+    theme: simple
+    transition: convex
+    slide-number: true
+    center: true
+    autoSlide: 0
+    autoAnimate: true
+    css: custom.css
+    title-slide-attributes:
+      data-background-image: img/aidworker.webp
+      data-background-size: cover
+      data-background-opacity: "0.3"
+    fonts: 
+      - "Lato"
+      - "Open Sans"
 ---
 
-# Welcome 👋👋👋
 
-Humanitarian aid workers operate in some of the world’s most dangerous environments—regions marked by conflict, instability, and humanitarian crisis.  
+## 👋 Welcome
 
-![An aid worker comforts and hydrates a child affected by conflict. ](img/aid.jpg)
-
-<small>Source: [The Borgen Project](https://borgenproject.org/9-facts-about-humanitarian-aid/)</small>
-
-This project offers a data-driven exploration of **attacks on aid workers** between **1997 and 2025**, aiming to uncover where, when, and how these threats occur.
-
-By geographic and temporal visualizations, we focus on:
-
-- Identifying the most dangerous countries for aid personnel  
-- Understanding how risks vary by location, attack method, and time  
-- Providing **evidence-based recommendations** for agencies and field teams  
-
-Our goal is not only to inform — but to support safer humanitarian operations by transforming data into actionable insights.
+::: {.fragment}
+Humanitarian aid workers operate in conflict zones and disaster-struck regions—often risking their lives to help others.
+:::
 
 ---
 
-👉 Navigate to **Visualizations** to interact with the data.  
-👉 Or jump directly to the **Conclusion** to view our key findings and policy suggestions.
+## 📊 Project Purpose
+
+::: {.fragment}
+This project analyzes attacks on aid workers from **1997 to 2025**, uncovering:
+:::
+
+::: {.fragment}
+- Most dangerous countries  
+- Attack patterns by time and type  
+- Country-specific policy insights
+:::
 
 ---
 
-_Created by: ly307 (Georgetown University, DSAN)_
+## 🌍 Top 10 Dangerous Countries
+
+::: {.fragment}
+Each bar represents a country with the most reported attacks on aid workers.
+:::
+
+<div class="fragment">
+<iframe src="figs/top10_bar.html" width="100%" height="500"></iframe>
+</div>
+
+---
+
+## 🗺️ Global Security Incidents
+
+::: {.fragment}
+Each dot represents one attack on an aid worker from 1997 to 2025.
+:::
+
+<div class="fragment">
+<iframe src="figs/incident_map_by_year.html" width="100%" height="550"></iframe>
+</div>
+
+---
+
+## 📈 Yearly Trends in Top 5 Countries
+
+::: {.fragment}
+Track how aid worker attacks evolved in conflict zones over time.
+:::
+
+<div class="fragment">
+<iframe src="figs/line_trends.html" width="100%" height="500"></iframe>
+</div>
+
+---
+
+## 🔥 Year-by-Year Hotspots
+
+::: {.fragment}
+This animation highlights the top 5 most dangerous countries each year.
+:::
+
+<div class="fragment">
+<iframe src="figs/animated_top5.html" width="100%" height="550"></iframe>
+</div>
+
+---
+
+## 🎯 Focus: 2023–2025 Top 3 Countries
+
+::: {.fragment}
+- 🟥 South Sudan  
+- 🟤 Sudan  
+- 🟢 Occupied Palestinian Territories
+:::
+
+---
+
+## 🔥 Most Dangerous Countries (2023–2025)
+
+<div style="display: flex; justify-content: space-around; gap: 20px;">
+
+<div class="fragment" style="flex: 1.2; max-width: 32%; background-color: #fff6f6; border-radius: 12px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+<h4 style="color: #B22222;">🟥 South Sudan</h4>
+<ul>
+  <li>Ambushes and shootings</li>
+  <li>Risks on roads and project sites</li>
+</ul>
+<img src="img/ss.jpg" style="width: 100%; border-radius: 8px;" alt="South Sudan"/>
+</div>
+
+<div class="fragment" style="flex: 1.2; max-width: 32%; background-color: #f9f4f2; border-radius: 12px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+<h4 style="color: #8B4513;">🟤 Sudan</h4>
+<ul>
+  <li>Urban conflict zones</li>
+  <li>Homes and roads highly targeted</li>
+</ul>
+<img src="img/sd.jpg" style="width: 100%; border-radius: 8px;" alt="Sudan"/>
+</div>
+
+<div class="fragment" style="flex: 1.6; max-width: 38%; background-color: #f0fff0; border-radius: 12px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+<h4 style="color: #228B22;">🟢 Occupied Palestinian Territories</h4>
+<ul>
+  <li>Aerial bombardment common</li>
+  <li>Public areas & aid sites under threat</li>
+</ul>
+<img src="img/gaza.jpg" style="width: 100%; border-radius: 8px;" alt="Gaza"/>
+</div>
+
+</div>
+
+---
+
+## 🧠 Threat Breakdown: 2023–2025
+
+::: {.fragment}
+Explore threat types by selecting:  
+Means of Attack, Attack Context, Location of Incident
+:::
+
+<div class="fragment">
+<iframe src="figs/pie_charts.html" width="100%" height="600"></iframe>
+</div>
+
+---
+
+## ✅ Key Findings
+
+::: {.fragment}
+- Conflict zones shift over time  
+- National staff suffer most attacks  
+- Threats vary by region and political context
+:::
+
+---
+
+## 📌 Regional Recommendations (2023–2025)
+
+<div style="display: flex; flex-direction: column; gap: 12px; align-items: stretch; width: 100%; font-size: 0.75em;">
+
+<!-- South Sudan -->
+<div class="fragment" style="background-color: #fff6f6; width: 100%; padding: 14px; border-radius: 10px; box-sizing: border-box; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <h4 style="color: #B22222; margin-top: 0; margin-bottom: 6px;">🟥 South Sudan</h4>
+  <ul style="margin: 0; padding-left: 1.2em;">
+    <li>Use convoys</li>
+    <li>Secure project sites</li>
+    <li>Train for violent encounters</li>
+  </ul>
+</div>
+
+<!-- Sudan -->
+<div class="fragment" style="background-color: #f9f4f2; width: 100%; padding: 14px; border-radius: 10px; box-sizing: border-box; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <h4 style="color: #8B4513; margin-top: 0; margin-bottom: 6px;">🟤 Sudan</h4>
+  <ul style="margin: 0; padding-left: 1.2em;">
+    <li>Avoid urban concentration</li>
+    <li>Get local intelligence updates</li>
+    <li>Plan for mobile operations</li>
+  </ul>
+</div>
+
+<!-- Palestinian Territories -->
+<div class="fragment" style="background-color: #f0fff0; width: 100%; padding: 14px; border-radius: 10px; box-sizing: border-box; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <h4 style="color: #228B22; margin-top: 0; margin-bottom: 6px;">🟢 Palestinian Territories</h4>
+  <ul style="margin: 0; padding-left: 1.2em;">
+    <li>Negotiate humanitarian corridors</li>
+    <li>Mark aid assets clearly</li>
+    <li>Ensure evacuation plans exist</li>
+  </ul>
+</div>
+
+</div>
+
+
+---
+
+## 📦 General Advice for Agencies
+
+::: {.fragment}
+- Protect local staff  
+- Use real-time data tools  
+- Improve coordination and legal advocacy
+:::
+
+---
+
+## 🙏 A Final Tribute
+
+::: {.fragment}
+Behind every data point is a person—risking everything to help others.
+
+This project is a tribute to their courage.
+:::
+
+<div class="fragment" style="text-align: center;">
+  <img src="img/pigeon.jpg" alt="Pigeon of peace" style="width: 50%; max-width: 300px; border-radius: 8px;" />
+</div>
+
+---
+
+## 📚 References
+
+<div style="font-size: 0.8em; line-height: 1.6;">
+
+**Pic 1** — *Aid workers participate in "I am #NotATarget" campaign while distributing food in Tukaraq, Somalia.*  
+<small>Source: <a href="https://www.thenewhumanitarian.org/feature/2021/2/25/then-and-now-25-years-of-aid-worker-insecurity" target="_blank">The New Humanitarian</a></small>
+
+<br>
+
+**Pic 2** — *South Sudanese volunteers carrying relief supplies*  
+<small>Source: <a href="https://www.topafricanews.com/2021/06/01/condemning-violence-against-humanitarian-workers-in-south-sudan/" target="_blank">Top Africa News</a></small>
+
+<br>
+
+**Pic 3** — *International aid workers walking side by side*  
+<small>Source: <a href="https://civil-protection-humanitarian-aid.ec.europa.eu/where/africa/sudan_en" target="_blank">European Commission</a></small>
+
+<br>
+
+**Pic 4** — *Aid workers standing in front of medical supplies*  
+<small>Source: <a href="https://www.map.org.uk/news/archive/post/1588-what-itas-like-being-a-humanitarian-aid-worker-in-gaza-more-than-200-days-into-war" target="_blank">MAP</a></small>
+
+<br>
+
+**Pic 5** — *Pigeon of peace*  
+<small>Source: <a href="https://www.vecteezy.com/vector-art/23621322-animal-white-pigeon-peace-symbol" target="_blank">Vecteezy</a></small>
+
+</div>
